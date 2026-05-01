@@ -11,12 +11,12 @@ llm:
   #  - name: "gpt-5"
   #    weight: 1.0
   #max_tokens: 16384
-  api_base: "https://lli-mnxdr87q-eastus2.cognitiveservices.azure.com/openai/v1/"
+  api_base: https://lli-mnxdr87q-eastus2.cognitiveservices.azure.com/openai/v1/
   api_key: "${AZURE_API_KEY}"
   models:
     - name: "gpt-5.5"
       weight: 1.0
-  max_tokens: 200000
+  max_tokens: 128000
   timeout: 600
 prompt:
   system_message: 'You are an expert mathematician specializing in circle packing problems and computational geometry. Your

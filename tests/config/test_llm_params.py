@@ -52,6 +52,14 @@ class TestApiBaseRouting:
         )
         assert cfg.models[0].api_base == _OPENAI_DEFAULT_API_BASE
 
+    def test_openai_model_preserves_custom_api_base(self):
+        custom = "https://example.openai.azure.com/openai/v1/"
+        cfg = LLMConfig(
+            api_base=custom,
+            models=[LLMModelConfig(name="gpt-5.5")],
+        )
+        assert cfg.models[0].api_base == custom
+
     def test_mixed_providers_with_local_api_base(self):
         cfg = LLMConfig(
             api_base="http://localhost:11434/v1",
